@@ -52,6 +52,13 @@ En cada ejecucion se verifico lo siguiente:
 - Que no queden documentos pendientes.
 - Que cada trabajador procese seis documentos.
 - Que los cuatro hilos finalicen correctamente.
+  1. ¿Por que queue.Queue es apropiada para compartir trabajos?
+Porque permite repartir los 24 documentos entre los cuatro trabajadores sin que se repita el mismo documento. Cada uno va tomando un trabajo de la cola hasta terminar.
+2. ¿Que protege Lock y que pasaria si se actualizara el resumen sin el?
+Lock protege los resultados que comparten los trabajadores. Sin el podrian producirse errores cuando varios hilos intenten actualizar los datos al mismo tiempo.
+3. ¿Que cambiarias si cada documento tuviera que guardarse en un archivo real?
+Agregaria una parte para guardar cada documento en la computadora y controlaria que dos trabajadores 
+
 
 ### Evidencias
 
